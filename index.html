@@ -1,331 +1,332 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Автосалон - Продажа автомобилей</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Arial", sans-serif;
-      }
 
-      body {
-        background-color: #f5f5f5;
-        padding: 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Автосалон - Продажа автомобилей</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
 
-      header {
-        background: linear-gradient(135deg, #1c1c1c 0%, #2c2c2c 100%);
-        color: #ffffff;
-        padding: 40px 20px;
-        text-align: center;
-        margin-bottom: 40px;
-        border-radius: 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
 
-      .header-content {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
+    header {
+      background: linear-gradient(135deg, #1c1c1c 0%, #2c2c2c 100%);
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      border-radius: 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
 
-      .header-title {
-        font-size: 3em;
-        font-weight: 300;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 8px;
-        color: #ffffff;
-        font-family: "Times New Roman", serif;
-      }
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-      .header-subtitle {
-        font-size: 1.4em;
-        margin-bottom: 30px;
-        color: #c0c0c0;
-        font-weight: 300;
-        letter-spacing: 2px;
-        font-style: italic;
-        font-family: "Times New Roman", serif;
-      }
+    .header-title {
+      font-size: 3em;
+      font-weight: 300;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      color: #ffffff;
+      font-family: "Times New Roman", serif;
+    }
 
-      .header-features {
-        display: flex;
-        justify-content: center;
-        gap: 60px;
-        margin-top: 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 30px;
-      }
+    .header-subtitle {
+      font-size: 1.4em;
+      margin-bottom: 30px;
+      color: #c0c0c0;
+      font-weight: 300;
+      letter-spacing: 2px;
+      font-style: italic;
+      font-family: "Times New Roman", serif;
+    }
 
-      .feature-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 1.1em;
-        letter-spacing: 1px;
-        color: #e0e0e0;
-      }
+    .header-features {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+    }
 
-      .feature-icon {
-        font-size: 0.8em;
-        color: #c0c0c0;
-      }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      color: #e0e0e0;
+    }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+    .feature-icon {
+      font-size: 0.8em;
+      color: #c0c0c0;
+    }
 
-      .cars-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-      }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-      .car-card {
-        background-color: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-      .car-card:hover {
-        transform: translateY(-5px);
-      }
+    .car-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-      .car-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
 
-      .car-info {
-        padding: 15px;
-      }
+    .car-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-      .car-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
+    .car-info {
+      padding: 15px;
+    }
 
-      .car-price {
-        font-size: 16px;
-        color: #e74c3c;
-        font-weight: bold;
-        margin-bottom: 15px;
-      }
+    .car-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-      .details-btn {
-        background-color: #3498db;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 100%;
-      }
+    .car-price {
+      font-size: 16px;
+      color: #e74c3c;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
 
-      .details-btn:hover {
-        background-color: #2980b9;
-      }
+    .details-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
 
-      /* Modal styles */
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-      }
+    .details-btn:hover {
+      background-color: #2980b9;
+    }
 
-      .modal-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        width: 80%;
-        max-width: 600px;
-        position: relative;
-      }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        cursor: pointer;
-        color: #333;
-      }
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 600px;
+      position: relative;
+    }
 
-      .car-details {
-        margin-top: 20px;
-      }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
 
-      .car-details h3 {
-        margin-bottom: 15px;
-        color: #333;
-      }
+    .car-details {
+      margin-top: 20px;
+    }
 
-      .car-details p {
-        margin-bottom: 10px;
-        line-height: 1.5;
-      }
+    .car-details h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
 
-      .car-details-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 5px;
-        margin-bottom: 15px;
-      }
-    </style>
-  </head>
+    .car-details p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
 
-  <body>
-    <header>
-      <div class="header-content">
-        <h1 class="header-title">PREMIUM AUTO GALLERY</h1>
-        <p class="header-subtitle">Искусство роскошной мобильности</p>
-        <div class="header-features">
-          <div class="feature-item">
-            <span class="feature-icon">✦</span>
-            <span>Эксклюзивные модели</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">✦</span>
-            <span>Безупречный сервис</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">✦</span>
-            <span>Индивидуальный подход</span>
-          </div>
+    .car-details-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1 class="header-title">PREMIUM AUTO GALLERY</h1>
+      <p class="header-subtitle">Искусство роскошной мобильности</p>
+      <div class="header-features">
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span>Эксклюзивные модели</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span>Безупречный сервис</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span>Индивидуальный подход</span>
         </div>
       </div>
-    </header>
-
-    <div class="container">
-      <div class="cars-grid" id="carsContainer">
-        <!-- Карточки автомобилей будут добавлены с помощью JavaScript -->
-      </div>
     </div>
+  </header>
 
-    <!-- Модальное окно -->
-    <div class="modal" id="carModal">
-      <div class="modal-content">
-        <span class="close-btn" id="closeModal">&times;</span>
-        <div id="carDetailsContent"></div>
-      </div>
+  <div class="container">
+    <div class="cars-grid" id="carsContainer">
+      <!-- Карточки автомобилей будут добавлены с помощью JavaScript -->
     </div>
+  </div>
 
-    <script>
-      // Данные об автомобилях
-      const cars = [
-        {
-          id: 1,
-          name: "BMW X5",
-          price: "4 500 000 ₽",
-          image:
-            "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym13JTIweDV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-          year: 2021,
-          mileage: "25 000 км",
-          engine: "3.0 л, дизель",
-          transmission: "Автоматическая",
-          color: "Черный",
-          description:
-            "Роскошный внедорожник с полным приводом, кожаным салоном и панорамной крышей.",
-        },
-        {
-          id: 2,
-          name: "Mercedes-Benz E-Class",
-          price: "3 800 000 ₽",
-          image:
-            "https://avatars.mds.yandex.net/i?id=5230d2d58cea8408919435134bf7f4fa_l-5233615-images-thumbs&n=13",
-          year: 2020,
-          mileage: "30 000 км",
-          engine: "2.0 л, бензин",
-          transmission: "Автоматическая",
-          color: "Серебристый",
-          description:
-            "Элегантный седан с комфортным салоном, современными технологиями и отличной динамикой.",
-        },
-        {
-          id: 3,
-          name: "Audi Q7",
-          price: "5 200 000 ₽",
-          image:
-            "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVkaSUyMHE3fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-          year: 2022,
-          mileage: "15 000 км",
-          engine: "3.0 л, дизель",
-          transmission: "Автоматическая",
-          color: "Белый",
-          description:
-            "Просторный семейный внедорожник с тремя рядами сидений и передовыми системами безопасности.",
-        },
-        {
-          id: 4,
-          name: "Toyota Camry",
-          price: "2 700 000 ₽",
-          image:
-            "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95b3RhJTIwY2Ftcnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-          year: 2021,
-          mileage: "20 000 км",
-          engine: "2.5 л, бензин",
-          transmission: "Автоматическая",
-          color: "Черный",
-          description:
-            "Надежный и комфортный седан с просторным салоном и экономичным расходом топлива.",
-        },
-        {
-          id: 5,
-          name: "Volkswagen Tiguan",
-          price: "2 900 000 ₽",
-          image:
-            "https://www.auto-dd.ru/wp-content/uploads/2020/04/volkswagen-tiguan_11.jpg",
-          year: 2020,
-          mileage: "35 000 км",
-          engine: "2.0 л, бензин",
-          transmission: "Автоматическая",
-          color: "Синий",
-          description:
-            "Компактный кроссовер с отличной управляемостью и богатым оснащением.",
-        },
-        {
-          id: 6,
-          name: "Lexus RX",
-          price: "4 800 000 ₽",
-          image:
-            "https://i.pinimg.com/736x/80/85/c4/8085c48f2c1c10ca4f35e91b362b0720.jpg",
-          year: 2021,
-          mileage: "18 000 км",
-          engine: "3.5 л, гибрид",
-          transmission: "Автоматическая",
-          color: "Белый",
-          description:
-            "Премиальный кроссовер с гибридной силовой установкой и роскошным салоном.",
-        },
-      ];
+  <!-- Модальное окно -->
+  <div class="modal" id="carModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div id="carDetailsContent"></div>
+    </div>
+  </div>
 
-      // Функция для отображения карточек автомобилей
-      function displayCars() {
-        const carsContainer = document.getElementById("carsContainer");
+  <script>
+    // Данные об автомобилях
+    const cars = [
+      {
+        id: 1,
+        name: "BMW X5",
+        price: "4 500 000 ₽",
+        image:
+          "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym13JTIweDV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        year: 2021,
+        mileage: "25 000 км",
+        engine: "3.0 л, дизель",
+        transmission: "Автоматическая",
+        color: "Черный",
+        description:
+          "Роскошный внедорожник с полным приводом, кожаным салоном и панорамной крышей.",
+      },
+      {
+        id: 2,
+        name: "Mercedes-Benz E-Class",
+        price: "3 800 000 ₽",
+        image:
+          "https://avatars.mds.yandex.net/i?id=5230d2d58cea8408919435134bf7f4fa_l-5233615-images-thumbs&n=13",
+        year: 2020,
+        mileage: "30 000 км",
+        engine: "2.0 л, бензин",
+        transmission: "Автоматическая",
+        color: "Серебристый",
+        description:
+          "Элегантный седан с комфортным салоном, современными технологиями и отличной динамикой.",
+      },
+      {
+        id: 3,
+        name: "Audi Q7",
+        price: "5 200 000 ₽",
+        image:
+          "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVkaSUyMHE3fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        year: 2022,
+        mileage: "15 000 км",
+        engine: "3.0 л, дизель",
+        transmission: "Автоматическая",
+        color: "Белый",
+        description:
+          "Просторный семейный внедорожник с тремя рядами сидений и передовыми системами безопасности.",
+      },
+      {
+        id: 4,
+        name: "Toyota Camry",
+        price: "2 700 000 ₽",
+        image:
+          "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95b3RhJTIwY2Ftcnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        year: 2021,
+        mileage: "20 000 км",
+        engine: "2.5 л, бензин",
+        transmission: "Автоматическая",
+        color: "Черный",
+        description:
+          "Надежный и комфортный седан с просторным салоном и экономичным расходом топлива.",
+      },
+      {
+        id: 5,
+        name: "Volkswagen Tiguan",
+        price: "2 900 000 ₽",
+        image:
+          "https://www.auto-dd.ru/wp-content/uploads/2020/04/volkswagen-tiguan_11.jpg",
+        year: 2020,
+        mileage: "35 000 км",
+        engine: "2.0 л, бензин",
+        transmission: "Автоматическая",
+        color: "Синий",
+        description:
+          "Компактный кроссовер с отличной управляемостью и богатым оснащением.",
+      },
+      {
+        id: 6,
+        name: "Lexus RX",
+        price: "4 800 000 ₽",
+        image:
+          "https://i.pinimg.com/736x/80/85/c4/8085c48f2c1c10ca4f35e91b362b0720.jpg",
+        year: 2021,
+        mileage: "18 000 км",
+        engine: "3.5 л, гибрид",
+        transmission: "Автоматическая",
+        color: "Белый",
+        description:
+          "Премиальный кроссовер с гибридной силовой установкой и роскошным салоном.",
+      },
+    ];
 
-        cars.forEach((car) => {
-          const carCard = document.createElement("div");
-          carCard.className = "car-card";
+    // Функция для отображения карточек автомобилей
+    function displayCars() {
+      const carsContainer = document.getElementById("carsContainer");
 
-          carCard.innerHTML = `
+      cars.forEach((car) => {
+        const carCard = document.createElement("div");
+        carCard.className = "car-card";
+
+        carCard.innerHTML = `
                     <img src="${car.image}" alt="${car.name}" class="car-image">
                     <div class="car-info">
                         <div class="car-title">${car.name}</div>
@@ -334,18 +335,18 @@
                     </div>
                 `;
 
-          carsContainer.appendChild(carCard);
-        });
-      }
+        carsContainer.appendChild(carCard);
+      });
+    }
 
-      // Функция для отображения модального окна с деталями
-      function showCarDetails(carId) {
-        const car = cars.find((car) => car.id === carId);
-        const modal = document.getElementById("carModal");
-        const carDetailsContent = document.getElementById("carDetailsContent");
+    // Функция для отображения модального окна с деталями
+    function showCarDetails(carId) {
+      const car = cars.find((car) => car.id === carId);
+      const modal = document.getElementById("carModal");
+      const carDetailsContent = document.getElementById("carDetailsContent");
 
-        if (car) {
-          carDetailsContent.innerHTML = `
+      if (car) {
+        carDetailsContent.innerHTML = `
                     <img src="${car.image}" alt="${car.name}" class="car-details-image">
                     <h2>${car.name}</h2>
                     <div class="car-price">${car.price}</div>
@@ -360,37 +361,38 @@
                     </div>
                 `;
 
-          modal.style.display = "flex";
-        }
+        modal.style.display = "flex";
       }
+    }
 
-      // Инициализация страницы
-      document.addEventListener("DOMContentLoaded", () => {
-        displayCars();
+    // Инициализация страницы
+    document.addEventListener("DOMContentLoaded", () => {
+      displayCars();
 
-        // Обработчик нажатия на кнопку "Подробнее"
-        document
-          .getElementById("carsContainer")
-          .addEventListener("click", (e) => {
-            if (e.target.classList.contains("details-btn")) {
-              const carId = parseInt(e.target.getAttribute("data-id"));
-              showCarDetails(carId);
-            }
-          });
-
-        // Закрытие модального окна при нажатии на крестик
-        document.getElementById("closeModal").addEventListener("click", () => {
-          document.getElementById("carModal").style.display = "none";
-        });
-
-        // Закрытие модального окна при клике вне его содержимого
-        window.addEventListener("click", (e) => {
-          const modal = document.getElementById("carModal");
-          if (e.target === modal) {
-            modal.style.display = "none";
+      // Обработчик нажатия на кнопку "Подробнее"
+      document
+        .getElementById("carsContainer")
+        .addEventListener("click", (e) => {
+          if (e.target.classList.contains("details-btn")) {
+            const carId = parseInt(e.target.getAttribute("data-id"));
+            showCarDetails(carId);
           }
         });
+
+      // Закрытие модального окна при нажатии на крестик
+      document.getElementById("closeModal").addEventListener("click", () => {
+        document.getElementById("carModal").style.display = "none";
       });
-    </script>
-  </body>
+
+      // Закрытие модального окна при клике вне его содержимого
+      window.addEventListener("click", (e) => {
+        const modal = document.getElementById("carModal");
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
